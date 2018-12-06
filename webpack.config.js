@@ -7,7 +7,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'ReactNavLite.js',
-        library: libraryName,      
         libraryTarget: 'umd',      
         publicPath: '/dist/',      
         umdNamedDefine: true  
