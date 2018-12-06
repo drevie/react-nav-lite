@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './ReactNavLite.scss';
+import './ReactNavLite.css';
 interface ReactSideNavProps {
     show: boolean;
     children: JSX.Element[];

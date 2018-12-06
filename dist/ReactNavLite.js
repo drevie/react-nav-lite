@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-require("./ReactNavLite.scss");
+require("./ReactNavLite.css");
 var ReactSideNav = /** @class */ (function (_super) {
     __extends(ReactSideNav, _super);
     function ReactSideNav() {
