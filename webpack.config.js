@@ -4,6 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './lib/ReactNavLite.tsx',
+    output: {
+        filename: 'ReactNavLite.js',
+        path: path.resolve(__dirname, 'dist'),
+        libraryTarget: 'commonjs2'
+    },
     module: {
         rules: [
             {
@@ -28,11 +33,10 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
-    output: {
-        filename: 'ReactNavLite.js',
-        path: path.resolve(__dirname, 'dist')
-    },
     plugins: [
         new ExtractTextPlugin("styles.css"),
-    ]
+    ],
+    externals: {
+        'react': 'commonjs react'
+      }
 }
