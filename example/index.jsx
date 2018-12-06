@@ -1,14 +1,3 @@
-# 🍋💡 react-nav-lite 💡🍋
-A Node.js module which provides a lightweigth navigation sidebar for React
-
-## Installation
-```sh
-npm install react-nav-lite --save
-yarn add react-nav-lite
-```
-
-## Usage
-```javascript
 import React from 'react'
 import ReactNavLite from '../src/ReactNavLite';
 
@@ -48,5 +37,3 @@ class Example extends React.Component {
         )
     }
 }
-
-```
