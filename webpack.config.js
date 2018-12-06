@@ -26,5 +26,13 @@ module.exports = {
     output: {
         filename: 'ReactNavLite.js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "dist/[name].css",
+            chunkFilename: "dist/[id].css"
+        })
+    ]
 }
