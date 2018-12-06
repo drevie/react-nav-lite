@@ -1,6 +1,6 @@
 {
     "name": "react-nav-lite",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "Responsive side nav component for react",
     "main": "dist/ReactNavLite.js",
     "types": "dist/ReactNavLite.d.ts",
@@ -12,6 +12,7 @@
         "@types/react": "^16.7.13",
         "@types/react-dom": "^16.0.11",
         "css-loader": "^1.0.1",
+        "mini-css-extract-plugin": "^0.4.5",
         "node-sass": "^4.10.0",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
@@ -22,6 +23,7 @@
         "webpack-cli": "^3.1.2"
     },
     "devDependencies": {
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "typescript": "^3.2.1"
     }
 }

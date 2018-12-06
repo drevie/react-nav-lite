@@ -1,4 +1,6 @@
-var path = require('path');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './lib/ReactNavLite.tsx',
@@ -11,13 +13,16 @@ module.exports = {
             },
             // SCSS Loader
             {
-                test: /\.s[ac]ss$/,
-                loaders: [
-                    require.resolve('style-loader'),
-                    require.resolve('css-loader'),
-                    require.resolve('sass-loader'),
-                ],
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css!sass'),
             },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
+            }
         ]
     },
     resolve: {
@@ -28,11 +33,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "dist/[name].css",
-            chunkFilename: "dist/[id].css"
-        })
+        new ExtractTextPlugin("styles.css"),
     ]
 }
