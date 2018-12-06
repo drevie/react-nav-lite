@@ -5,9 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: './lib/ReactNavLite.tsx',
     output: {
-        filename: 'ReactNavLite.js',
         path: path.resolve(__dirname, 'dist'),
-        libraryTarget: 'commonjs2'
+        filename: 'ReactNavLite.js',
+        library: libraryName,      
+        libraryTarget: 'umd',      
+        publicPath: '/dist/',      
+        umdNamedDefine: true  
     },
     module: {
         rules: [
