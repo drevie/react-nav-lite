@@ -10,15 +10,23 @@ yarn add react-nav-lite
 ## Usage
 ```javascript
 import React from 'react'
-import ReactNavLite from '../src/ReactNavLite';
+import ReactNavLite from 'react-nav-lite';
 
 class Example extends React.Component {
     constructor(props) {
         super(props);
 
+        this.toggleSideBar = this.toggleSideBar.bind(this);
+
         this.state = {
             showSideBar: false
         };
+    }
+    
+    toggleSideBar() {
+        this.setState({
+            showSidebar: !this.state.showSidebar,
+        });
     }
 
     render() {
@@ -26,7 +34,7 @@ class Example extends React.Component {
         return (
             <div>
                 <div>
-                    <button>Show Side Nav</button>
+                    <button onClick={this.toggleSideBar}>Show Side Nav</button>
                 </div>
                 <ReactNavLite show={showSideBar} >
                     <div>
